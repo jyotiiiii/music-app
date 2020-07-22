@@ -8,6 +8,9 @@ fetch data from API
 
 #### Planning the application
 
+Wireframe
+<img src="https://raw.githubusercontent.com/jyotiiiii/" alt="Wireframe" width="450"/>
+
 #### Organising the project
 
 #### Building the application
