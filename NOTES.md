@@ -10,7 +10,7 @@ fetch data from API
 
 ###### Wireframe
 
-<img src="https://raw.githubusercontent.com/jyotiiiii/music-app/master/src/wireframe.jpg" alt="Wireframe" width="450"/>
+<img src="https://github.com/jyotiiiii/music-app/blob/master/src/wireframe.jpg?raw=true" alt="Wireframe" width="450"/>
 
 #### Organising the project
 
