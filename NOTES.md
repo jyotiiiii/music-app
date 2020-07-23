@@ -41,20 +41,19 @@ Syntax of “eId” identifiers
 
 The “eId” field contains the unique identifier of the track/video on its hosting source. (e.g. youtube/soundcloud/vimeo):
 
-/yt/xxx is a YouTube identifier
-(i.e. it translates to https://youtube.com/watch?v=xxx)
+1. /bc/xxx#http://yyy is the **BandCamp** identifier of a track, followed by the URL of its audio stream
 
-1. /sc/xxx#http://yyy is the **SoundCloud** URI of a track, followed by the URL of its audio stream
+2. /dm/xxx is a **Dailymotion** video identifier
 
-2. /bc/xxx#http://yyy is the **BandCamp** identifier of a track, followed by the URL of its audio stream
+3. /dz/xxx is a **Deezer** track identifier
 
-3. /vi/xxx is a **Vimeo track** identifier
+4. /fi/http... is the URL of a **MP3** / audio file
 
-4. /dz/xxx is a **Deezer** track identifier
+5. /sc/xxx#http://yyy is the **SoundCloud** URI of a track, followed by the URL of its audio stream
 
-5. /dm/xxx is a **Dailymotion** video identifier
+6. /vi/xxx is a **Vimeo track** identifier
 
-6. /fi/http... is the URL of a **MP3** / audio file
+7. /yt/xxx is a **YouTube** identifier (i.e. it translates to https://youtube.com/watch?v=xxx)
 
 ###### Genres
 

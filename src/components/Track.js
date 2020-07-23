@@ -48,9 +48,27 @@ const BandCampTrack = ({ eId }) => {
 
     return <iframe frameborder="no" width="100%" height="120px" title={eId} src={`https://bandcamp.com/EmbeddedPlayer/album=1308147662/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/track=${embedUrl}/transparent=true/`} seamless />
 }
+// "eId": "/dm/x1hszbm"
+const DailyMotionTrack = ({ id }) => (
+    <>
+        {/* <div position="relative" padding-bottom="56.25%" height="0" overflow="hidden"> */}
+        <iframe width="100%" height="100%" position="absolute" left="0px" top="0px" overflow="hidden"
+            frameborder="0" type="text/html" src={`https://www.dailymotion.com/embed/video/${id}`}
+            allowfullscreen title={id} />
+        {/* </div> */}
 
+    </>
+)
 
+// const Mp3Track = () => (
+// "eId": "/fi/http://www.beggarspromo.com/PromoSecure/OkayKayaImStupidButILoveYou.mp3?_=1438377495593"
+//     <>
+//         <div>
+//             <audio ref="audio_tag" src="http://www.beggarspromo.com/PromoSecure/OkayKayaImStupidButILoveYou.mp3?_=1438377495593" controls autoPlay />
+//         </div>
+//     </>
 
+// )
 
 
 
@@ -74,12 +92,16 @@ const Track = ({ item }) => {
     } else if (platformId === 'vi') {
         const id = item.eId.substr(4)
         trackComponent = <VimeoTrack id={id} />
+    } else if (platformId === 'dm') {
+        const id = item.eId.substr(4)
+        trackComponent = <DailyMotionTrack id={id} />
     } else {
         trackComponent = <p>Sorry this platform is not supported</p>
     }
 
     return (
         <div>
+
             <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="100px" />
             <p>{item.name}</p>
             {showing && trackComponent}
