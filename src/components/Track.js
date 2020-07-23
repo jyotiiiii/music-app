@@ -6,18 +6,15 @@ const YouTubeTrack = ({ id }) => (
         src={`https://www.youtube.com/embed/${id}`}
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+
     />
 )
 
-// eId": " / vi / 132152801"
-const VimeoTrack = () => (
 
-    <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe src="https://player.vimeo.com/video/132152801?color=c9ff23&title=0&byline=0&portrait=0"
-            style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
-            allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
+const VimeoTrack = ({ id }) => (
+    <iframe src={`https://player.vimeo.com/video/${id}?color=c9ff23&title=0&byline=0&portrait=0`}
+        position="absolute" top="0" left="0" width="100%" height="100%" frameborder="0" allow="autoplay" fullscreen
+        allowfullscreen title={id}></iframe>
 )
 
 const SoundCloudTrack = ({ eId }) => {
@@ -76,7 +73,7 @@ const Track = ({ item }) => {
         trackComponent = <BandCampTrack eId={item.eId} />
     } else if (platformId === 'vi') {
         const id = item.eId.substr(4)
-        trackComponent = <YouTubeTrack id={id} />
+        trackComponent = <VimeoTrack id={id} />
     } else {
         trackComponent = <p>Sorry this platform is not supported</p>
     }
