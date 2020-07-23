@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// Styles
+import { Jumbotron, Button, Card, Col, Container, Row } from 'react-bootstrap';
 
 
 // TODO find another way of getting the album id
@@ -39,7 +41,7 @@ const SoundCloudTrack = ({ id }) => {
 
     const src = `https://w.soundcloud.com/player/?url=${id}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`;
     return <iframe width="50%"
-        height="166" title={id} scrolling="no" frameborder="no" allow="autoplay"
+        height="166" title={id} scrolling="no" frameBorder="no" allow="autoplay"
         src={src} />
 }
 
@@ -91,13 +93,47 @@ const Track = ({ item }) => {
     }
 
     return (
-        <div>
+        <>
+            {showing && <Jumbotron fluid>
+                <Container>
+                    <h1>Fluid jumbotron</h1>
+                    <p>
+                        This is a modified jumbotron that occupies the entire horizontal space of
+                        its parent.
+    </p>{showing && trackComponent}
+                </Container>
+            </Jumbotron>
+            }
 
-            <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="100px" />
-            {showing && trackComponent}
-            <p>{item.name}</p>
+            <Row>
+                <Col md={4} className="right">
+                    <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="100px" width="100px" objectfit="cover" />
+                </Col>
+                <Col md={8}>
+                    <Card style={{ width: '50%' }}>
+                        <Card.Body>
 
-        </div>
+                            {/* <Card.Title>Card Title</Card.Title> */}
+                            <Card.Subtitle className="mb-2 text-muted">{item.name}</Card.Subtitle>
+                            <Card.Text>
+                                {/* Some quick example text to build on the card title and make up the bulk of
+                                the card's content. */}
+                            </Card.Text>
+                            <Card.Link href="#">Card Link</Card.Link>
+                            <Card.Link href="#">Another Link</Card.Link>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+
+
+
+
+
+
+
+
+        </>
     )
 };
 
