@@ -27,6 +27,14 @@ const SoundCloudTrack = ({ eId }) => {
 }
 
 
+const DeezerTrack = ({ id }) => (
+    <iframe scrolling="no"
+        title={id}
+        frameborder="0"
+        allowTransparency="true"
+        src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=${id}&app_id=1`}
+        width="700" height="350"></iframe>
+)
 
 
 
@@ -44,6 +52,9 @@ const Track = ({ item }) => {
         trackComponent = <YouTubeTrack id={id} />
     } else if (platformId === 'sc') {
         trackComponent = <SoundCloudTrack eId={item.eId} />
+    } else if (platformId === 'dz') {
+        const id = item.eId.substr(4)
+        trackComponent = <DeezerTrack id={id} />
     } else {
         trackComponent = <p>Sorry this platform is not supported</p>
     }
