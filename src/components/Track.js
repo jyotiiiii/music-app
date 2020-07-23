@@ -10,8 +10,14 @@ const YouTubeTrack = ({ id }) => (
     />
 )
 
+// eId": " / vi / 132152801"
 const VimeoTrack = () => (
-    <p>Vimeo</p>
+
+    <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/132152801?color=c9ff23&title=0&byline=0&portrait=0"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"
+            allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
 )
 
 const SoundCloudTrack = ({ eId }) => {
@@ -33,8 +39,19 @@ const DeezerTrack = ({ id }) => (
         frameborder="0"
         allowTransparency="true"
         src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=${id}&app_id=1`}
-        width="700" height="350"></iframe>
+        width="700" height="350" />
 )
+// TODO find another way of getting the album id
+// Don't have access to the album id from the openwhyd API
+// Some have album id and track id some have album id only
+const BandCampTrack = ({ eId }) => {
+
+    const idIndex = eId.indexOf('id=');
+    const embedUrl = eId.substr(idIndex + 3, 10);
+
+    return <iframe frameborder="no" width="100%" height="120px" title={eId} src={`https://bandcamp.com/EmbeddedPlayer/album=1308147662/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/track=${embedUrl}/transparent=true/`} seamless />
+}
+
 
 
 
@@ -55,6 +72,11 @@ const Track = ({ item }) => {
     } else if (platformId === 'dz') {
         const id = item.eId.substr(4)
         trackComponent = <DeezerTrack id={id} />
+    } else if (platformId === 'bc') {
+        trackComponent = <BandCampTrack eId={item.eId} />
+    } else if (platformId === 'vi') {
+        const id = item.eId.substr(4)
+        trackComponent = <YouTubeTrack id={id} />
     } else {
         trackComponent = <p>Sorry this platform is not supported</p>
     }
