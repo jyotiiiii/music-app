@@ -21,6 +21,8 @@ function Card() {
             });
     }, [])
 
+
+    // Using sample data array to work on all 7 possible platforms 
     // useEffect(() => {
     //     // TODO this using sample data
 
