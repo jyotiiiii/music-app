@@ -44,16 +44,36 @@ The “eId” field contains the unique identifier of the track/video on its hos
 /yt/xxx is a YouTube identifier
 (i.e. it translates to https://youtube.com/watch?v=xxx)
 
-/sc/xxx#http://yyy is the SoundCloud URI of a track, followed by the URL of its audio stream
+1. /sc/xxx#http://yyy is the **SoundCloud** URI of a track, followed by the URL of its audio stream
 
-/bc/xxx#http://yyy is the BandCamp identifier of a track, followed by the URL of its audio stream
+2. /bc/xxx#http://yyy is the **BandCamp** identifier of a track, followed by the URL of its audio stream
 
-/vi/xxx is a Vimeo track identifier
+3. /vi/xxx is a **Vimeo track** identifier
 
-/dz/xxx is a Deezer track identifier
+4. /dz/xxx is a **Deezer** track identifier
 
-/dm/xxx is a Dailymotion video identifier
+5. /dm/xxx is a **Dailymotion** video identifier
 
-/fi/http... is the URL of a MP3 / audio file
+6. /fi/http... is the URL of a **MP3** / audio file
+
+###### Genres
+
+All
+Electro
+Hip hop
+Pop
+Indie
+Folk
+Rock
+Punk
+Metal
+Blues
+R&B
+Soul
+Jazz
+Classical
+Reggae
+Latin
+World
 
 #### Design resources

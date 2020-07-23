@@ -15,17 +15,22 @@ const VimeoTrack = () => (
 )
 
 const SoundCloudTrack = ({ eId }) => {
-    // "eId": "/sc/bedopal/ricardo-villalobos-enfants#https://api.soundcloud.com/tracks/20686505/stream",
+
     const hashIndex = eId.indexOf('#');
     const streamUrl = eId.substr(hashIndex + 1);
     const embedUrl = streamUrl.substr(0, streamUrl.length - '/stream'.length)
 
-    const src = `https://w.soundcloud.com/player/?url=${embedUrl}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`;
-    return <iframe width="100%"
-        height="300" title={eId} scrolling="no" frameborder="no" allow="autoplay"
+    const src = `https://w.soundcloud.com/player/?url=${embedUrl}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`;
+    return <iframe width="50%"
+        height="166" title={eId} scrolling="no" frameborder="no" allow="autoplay"
         src={src} />
-
 }
+
+
+
+
+
+
 
 const Track = ({ item }) => {
     const [showing, setShowing] = useState(false);
