@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 // Styles
-import { Jumbotron, Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Jumbotron, Card, Col, Container, Row } from 'react-bootstrap';
+import play from '../images/play.png';
 
+import './Track.css';
 
 // TODO find another way of getting the album id
 // Don't have access to the album id from the openwhyd API
@@ -94,9 +96,9 @@ const Track = ({ item }) => {
 
     return (
         <>
-            {showing && <Jumbotron fluid>
+            {showing && <Jumbotron>
                 <Container>
-                    <h1>Fluid jumbotron</h1>
+                    <h1>{item.name}</h1>
                     <p>
                         This is a modified jumbotron that occupies the entire horizontal space of
                         its parent.
@@ -106,21 +108,22 @@ const Track = ({ item }) => {
             }
 
             <Row>
-                <Col md={4} className="right">
-                    <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="100px" width="100px" objectfit="cover" />
+                <Col md={4} className="right middle">
+                    <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="90px" width="100px" objectfit="cover" />
                 </Col>
                 <Col md={8}>
-                    <Card style={{ width: '50%' }}>
+                    <Card style={{ width: '80%' }}>
                         <Card.Body>
 
+                            <img onClick={() => { setShowing(!showing) }} className="inline" src={play} width="30px" alt={item.name} />
                             {/* <Card.Title>Card Title</Card.Title> */}
-                            <Card.Subtitle className="mb-2 text-muted">{item.name}</Card.Subtitle>
-                            <Card.Text>
+                            {/* <Card.Subtitle className="mb-2 text-muted padleft" >{item.name}</Card.Subtitle> */}
+                            <Card.Text className="mb-2 text-muted padleft inline" >{item.name}
                                 {/* Some quick example text to build on the card title and make up the bulk of
                                 the card's content. */}
                             </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
+
+
                         </Card.Body>
                     </Card>
                 </Col>
