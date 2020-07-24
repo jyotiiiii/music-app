@@ -1,11 +1,11 @@
 import React from 'react';
 // Styles
-import './Track.css';
+import './App.css';
 
 
 // TODO find another way of getting the album id
 // Don't have access to the album id from the openwhyd API
-// Some have album id and track id some have album id only
+// Some items have album id and track id some have album id only
 const BandCampTrack = ({ id }) => (
     <iframe frameborder="no" width="100%" height="120px" title={id} src={`https://bandcamp.com/EmbeddedPlayer/album=1308147662/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/track=${id}/transparent=true/`} seamless />
 )
@@ -15,7 +15,6 @@ const DailyMotionTrack = ({ id }) => (
     <iframe width="100%" height="100%" position="absolute" left="0px" top="0px" overflow="hidden"
         frameborder="0" type="text/html" src={`https://www.dailymotion.com/embed/video/${id}`}
         allowfullscreen title={id} />
-
 )
 
 const DeezerTrack = ({ id }) => (
@@ -27,6 +26,7 @@ const DeezerTrack = ({ id }) => (
         width="700" height="350" />
 )
 
+// Yet to be implemented
 // const Mp3Track = () => (
 // "eId": "/fi/http://www.beggarspromo.com/PromoSecure/OkayKayaImStupidButILoveYou.mp3?_=1438377495593"
 //     <>
@@ -55,18 +55,15 @@ const YouTubeTrack = ({ id }) => (
     <iframe title={id}
         width="560" height="315"
         src={`https://www.youtube.com/embed/${id}`}
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     />
 )
 
 
 const Track = ({ item }) => {
-    // console.log(props);
 
-
-
-    // looks for the platform identifier 
+    // looks for the platform identifier for url
     const platformId = item.eId.substr(1, 2);
     let trackComponent;
     if (platformId === 'bc') {
@@ -97,8 +94,6 @@ const Track = ({ item }) => {
     return (
         <>
             {trackComponent}
-
-
         </>
     )
 };

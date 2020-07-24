@@ -16,9 +16,6 @@ const NavBar = () => (
       Music App
     </Navbar.Brand>
         </Navbar>
-
-
-
     </>
 )
 

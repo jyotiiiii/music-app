@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import data from '../sa./MusicCardta.json';
+// import data from '../sampledata.json';
 
 import NavBar from './NavBar';
 import Jumbo from './Jumbo';
@@ -19,7 +19,6 @@ function App() {
 		const url = 'https://cors-anywhere.herokuapp.com/https://openwhyd.org/hot/all?format=json';
 		// const url = 'https://openwhyd.org/hot/all?format=json';
 		axios.get(url).then((response) => {
-			console.log(response.data);
 			return response.data;
 		})
 			.then((data) => {
@@ -38,34 +37,28 @@ function App() {
 	//     setMusic(data.tracks)
 	// }, [])
 
-	console.log({ currentItem })
+
 	return (
-		<>
+		<Container fluid>
 			<NavBar />
-
 			<Jumbo item={currentItem} showing={showing} onClick={() => { setShowing(!showing) }} />
+			<h1 className="padleft">What's hot:</h1>
 
-			<Container fluid>
-				<h1>What's hot:</h1>
-				{/* <Item showing={showing} item={music} onClick={() => { setShowing(!showing) }} /> */}
-
-				{music.length > 0 ? (
-					music.map((item) => (
-						<Item
-							onClick={() => {
-								setCurrentItem(item);
-								window.scrollTo(0, 0);
-							}}
-							{...item}
-							key={item.eId}
-						/>
-					))
-				) : (
-						<p>No results found</p>
-					)}
-
-			</Container>
-		</>
+			{music.length > 0 ? (
+				music.map((item) => (
+					<Item
+						onClick={() => {
+							setCurrentItem(item);
+							window.scrollTo(0, 0);
+						}}
+						{...item}
+						key={item.eId}
+					/>
+				))
+			) : (
+					<p>Loading...</p>
+				)}
+		</Container>
 	);
 }
 

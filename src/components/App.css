@@ -1,0 +1,28 @@
+html * {
+  font-family: 'Raleway', sans-serif;
+}
+
+.right {
+  text-align: right;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.padleft {
+  padding-left: 60px;
+}
+
+.centre {
+  text-align: center;
+  min-height: 200px;
+}
+
+.grey {
+  background-color: #e9ecef;
+}

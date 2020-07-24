@@ -2,8 +2,10 @@ import React from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import Track from './Track'
 
+import './App.css';
+
 const Jumbo = (props) => {
-    // console.log(props);
+
     const {
         name,
         onClick,
@@ -11,20 +13,16 @@ const Jumbo = (props) => {
         item
     } = props;
 
-    console.log('Jumbo', item)
     return (
-        <Jumbotron>
+        <Jumbotron className="centre">
             <Container fluid>
                 <h1>{name}</h1>
                 {item &&
                     <Track item={item} showing={showing} onClick={onClick} />}
-
             </Container>
         </Jumbotron>
 
     )
 }
-
-
 
 export default Jumbo;
