@@ -1,9 +1,7 @@
 import React from 'react';
 // Styles
-
-
-
 import './Track.css';
+
 
 // TODO find another way of getting the album id
 // Don't have access to the album id from the openwhyd API
@@ -63,8 +61,10 @@ const YouTubeTrack = ({ id }) => (
 )
 
 
-const Track = ({ item, showing, onClick }) => {
-    // const [showing, setShowing] = useState(false);
+const Track = ({ item }) => {
+    // console.log(props);
+
+
 
     // looks for the platform identifier 
     const platformId = item.eId.substr(1, 2);
@@ -96,7 +96,7 @@ const Track = ({ item, showing, onClick }) => {
 
     return (
         <>
-            {showing && trackComponent}
+            {trackComponent}
 
 
         </>

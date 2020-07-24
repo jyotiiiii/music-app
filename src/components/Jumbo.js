@@ -2,20 +2,27 @@ import React from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import Track from './Track'
 
-const Jumbo = ({ item, showing, onClick }) => {
+const Jumbo = (props) => {
+    // console.log(props);
+    const {
+        name,
+        onClick,
+        showing,
+        item
+    } = props;
 
-
-
+    console.log('Jumbo', item)
     return (
-        <> {showing && <Jumbotron>
+        <Jumbotron>
             <Container fluid>
-                <h1>{item.name}</h1>
-                <Track onClick={onClick} />
+                <h1>{name}</h1>
+                {item &&
+                    <Track item={item} showing={showing} onClick={onClick} />}
 
             </Container>
         </Jumbotron>
-        }
-        </>)
+
+    )
 }
 
 

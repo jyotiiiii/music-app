@@ -10,8 +10,8 @@ const Item = (props) => {
         name,
         img,
         onClick,
-
     } = props;
+
     return (
         <>
 
