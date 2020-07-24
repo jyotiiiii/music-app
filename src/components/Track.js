@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 // Styles
-import { Jumbotron, Card, Col, Container, Row } from 'react-bootstrap';
-import play from '../images/play.png';
+
+
 
 import './Track.css';
 
@@ -63,8 +63,8 @@ const YouTubeTrack = ({ id }) => (
 )
 
 
-const Track = ({ item }) => {
-    const [showing, setShowing] = useState(false);
+const Track = ({ item, showing, onClick }) => {
+    // const [showing, setShowing] = useState(false);
 
     // looks for the platform identifier 
     const platformId = item.eId.substr(1, 2);
@@ -96,44 +96,7 @@ const Track = ({ item }) => {
 
     return (
         <>
-            {showing && <Jumbotron>
-                <Container>
-                    <h1>{item.name}</h1>
-                    <p>
-                        This is a modified jumbotron that occupies the entire horizontal space of
-                        its parent.
-    </p>{showing && trackComponent}
-                </Container>
-            </Jumbotron>
-            }
-
-            <Row>
-                <Col md={4} className="right middle">
-                    <img onClick={() => { setShowing(!showing) }} src={item.img} alt={item.name} height="90px" width="100px" objectfit="cover" />
-                </Col>
-                <Col md={8}>
-                    <Card style={{ width: '80%' }}>
-                        <Card.Body>
-
-                            <img onClick={() => { setShowing(!showing) }} className="inline" src={play} width="30px" alt={item.name} />
-                            {/* <Card.Title>Card Title</Card.Title> */}
-                            {/* <Card.Subtitle className="mb-2 text-muted padleft" >{item.name}</Card.Subtitle> */}
-                            <Card.Text className="mb-2 text-muted padleft inline" >{item.name}
-                                {/* Some quick example text to build on the card title and make up the bulk of
-                                the card's content. */}
-                            </Card.Text>
-
-
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-
-
-
-
-
-
+            {showing && trackComponent}
 
 
         </>

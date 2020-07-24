@@ -12,6 +12,10 @@ fetch data from API
 
 <img src="https://github.com/jyotiiiii/music-app/blob/master/src/wireframe.jpg?raw=true" alt="Wireframe" width="600"/>
 
+###### Components
+
+<img src="https://github.com/jyotiiiii/music-app/blob/master/src/components.jpg?raw=true" alt="Wireframe" width="600"/>
+
 #### Organising the project
 
 Components
