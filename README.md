@@ -7,6 +7,7 @@ Clone this project and navigate to the directory
 ```
 git clone https://github.com/jyotiiiii/music-app.git
 cd music-app
+npm install
 npm start
 ```
 
